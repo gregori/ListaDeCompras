@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ItemListActivity"
+    android:padding="16dp"
+    android:dividerPadding="8dp"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/choice_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/feij_o" />
+
+    <Button
+        android:id="@+id/choice_item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/arroz" />
+
+    <Button
+        android:id="@+id/choice_item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/queijo" />
+
+    <Button
+        android:id="@+id/choice_item4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/caf" />
+
+    <Button
+        android:id="@+id/choice_item5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/iogurte" />
+
+    <Button
+        android:id="@+id/choice_item6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/carne" />
+
+    <Button
+        android:id="@+id/choice_item7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/frango" />
+
+    <Button
+        android:id="@+id/choice_item8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/p_o" />
+
+    <Button
+        android:id="@+id/choice_item9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/a_car" />
+
+    <Button
+        android:id="@+id/choice_item10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertItemToList"
+        android:text="@string/farinha" />
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ListaDeCompras</string>
+    <string name="add_item_button_text">Adicionar Item</string>
+    <string name="farinha">Farinha</string>
+    <string name="a_car">Açúcar</string>
+    <string name="p_o">Pão</string>
+    <string name="frango">Frango</string>
+    <string name="carne">Carne</string>
+    <string name="iogurte">Iogurte</string>
+    <string name="caf">Café</string>
+    <string name="queijo">Queijo</string>
+    <string name="arroz">Arroz</string>
+    <string name="feij_o">Feijão</string>
+</resources>
