@@ -1,5 +1,6 @@
 package tech.gregori.listadecompras;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,14 +25,19 @@ atual da lista de compras é armazenado quando o usuário rotaciona o celular.
 
 public class MainActivity extends AppCompatActivity {
     public static final int TEXT_REQUEST = 1;
+    private static final int LIST_SIZE = 10;
+    private static final String ITEM_LIST = "itemList";
+    private static final String LIST_INDEX = "listIndex";
     private TextView[] displayItemList;
+    private String[] itemList;
     private int listIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        displayItemList = new TextView[10];
+        displayItemList = new TextView[LIST_SIZE];
+        itemList = new String[LIST_SIZE];
         listIndex = 0;
 
         int displayCount = 0;
@@ -45,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
         displayItemList[displayCount++] = findViewById(R.id.display_item7);
         displayItemList[displayCount++] = findViewById(R.id.display_item8);
         displayItemList[displayCount++] = findViewById(R.id.display_item9);
+
+        if (savedInstanceState != null) {
+            itemList = savedInstanceState.getStringArray(ITEM_LIST);
+            listIndex = savedInstanceState.getInt(LIST_INDEX);
+            for (int i = 0; i < LIST_SIZE; i++) {
+                displayItemList[i].setText(itemList[i]);
+            }
+        }
     }
 
     public void addItem(View view) {
@@ -58,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == TEXT_REQUEST) {
             if (resultCode == RESULT_OK) {
                 String chosenItem = data.getStringExtra(ItemListActivity.EXTRA_ITEM_TO_ADD);
-                if (listIndex < 10) { // se ainda tem espaço na lista
+                if (listIndex < LIST_SIZE) { // se ainda tem espaço na lista
+                    itemList[listIndex] = chosenItem;
                     displayItemList[listIndex].setText(chosenItem);
                     listIndex++;
                 }
@@ -67,4 +82,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        if (listIndex > 0) {
+            outState.putStringArray(ITEM_LIST, itemList);
+            outState.putInt(LIST_INDEX, listIndex);
+        }
+    }
 }
